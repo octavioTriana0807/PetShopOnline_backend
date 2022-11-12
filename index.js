@@ -11,11 +11,12 @@ app.use(express.json());
 app.use(cors());
 
 app.listen(port, ()=>{
-console.log("Api iniciado en el puerto "+port);
+    console.log("Api iniciado en el puerto "+port);
 })
 
 app.get("/", (request, response)=>{
-    response.send("Hola equipo, bienvenidos");
+    response.send("API iniciado");
 });
 
-app.use("/categorias", require("./rutas/CategoriaRutas"));
+app.use("/api/categorias", require("./rutas/CategoriaRutas"));
+app.use("/api/productos", require("./rutas/ProductoRutas"));
